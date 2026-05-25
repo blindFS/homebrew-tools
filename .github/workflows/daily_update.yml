@@ -1,0 +1,35 @@
+name: Daily Update Glyphlow
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run at midnight UTC daily
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-formula:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Run update script
+        id: update
+        run: ruby scripts/update_formula.rb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push changes
+        if: steps.update.outputs.updated == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add glyphlow.rb
+          git commit -m "Update glyphlow to ${{ steps.update.outputs.version }}"
+          git push
