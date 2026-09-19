@@ -30,6 +30,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add glyphlow.rb
-          git commit -m "Update glyphlow to ${{ steps.update.outputs.version }}"
+          git add glyphlow.rb glyphlow-cli.rb
+          git commit -m "upgrade ${{ steps.update.outputs.versions }}"
           git push
