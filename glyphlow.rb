@@ -1,9 +1,9 @@
 class Glyphlow < Formula
   desc "Feature-rich manipulation of UI elements on macOS with minimal key strokes."
   homepage "https://github.com/blindfs/glyphlow"
-  url "https://github.com/blindFS/Glyphlow/releases/download/v0.5.5/glyphlow.tar.gz"
-  sha256 "20c20eb12bb15b0fad83bfefdc5b39f7aec424829a0f1231a8cf30ede1a90077"
-  version "0.5.5"
+  url "https://github.com/blindFS/Glyphlow/releases/download/v0.5.6/glyphlow.tar.gz"
+  sha256 "49772db2d98c6b823f53d855a3b036f7bc8cef9fcd547b8235bea01470b92df1"
+  version "0.5.6"
   license "MIT"
 
   def install

@@ -1,9 +1,9 @@
 class GlyphlowCli < Formula
   desc "Command-line client for the Glyphlow server"
   homepage "https://github.com/blindFS/Glyphlow"
-  url "https://github.com/blindFS/Glyphlow/releases/download/v0.5.5/glyphlow-cli.tar.gz"
-  sha256 "290e4d6c55a00e477352fedf6d7f59e717dd44150e96ee02ff5720fc9d18104e"
-  version "0.5.5"
+  url "https://github.com/blindFS/Glyphlow/releases/download/v0.5.6/glyphlow-cli.tar.gz"
+  sha256 "c39efcf9585160131a17c6445e388439f6e6b2e1a005b505ba9284cb40420c0d"
+  version "0.5.6"
   license "MIT"
 
   def install
